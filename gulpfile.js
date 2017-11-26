@@ -4,7 +4,6 @@ const fileinclude = require('gulp-file-include')
 const runSequence = require('run-sequence') // not needed with gulp 4
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify-es').default
-const htmlmin = require('gulp-htmlmin')
 
 const path = require('path')
 
@@ -26,19 +25,8 @@ gulp.task('html-render', function () {
         .pipe(gulp.dest('public/'))
 })
 
-gulp.task('html-minify', function () {
-    return gulp.src('public/index.html')
-        .pipe(htmlmin())
-        .pipe(rename('index.min.html'))
-        .pipe(gulp.dest('public/'))
-})
-
 gulp.task('riot-build', function () {
     runSequence('riot-compile', 'riot-uglify')
 })
 
-gulp.task('html-build', function () {
-    runSequence('html-render', 'html-minify')
-})
-
-gulp.task('default', ['riot-build', 'html-build'])
+gulp.task('default', ['riot-build', 'html-render'])
