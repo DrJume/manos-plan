@@ -15,7 +15,7 @@
 
   <div class="page-load-spinner">
     <style>
-      @@include('spinner.css')
+      @@include('spinner.min.css')
     </style>
     @@include('spinner.html')
   </div>
@@ -23,8 +23,10 @@
   <script defer>
     loadjs('/css/blaze.min.css', 'blaze-css')
     loadjs(['/js/riot.min.js', '/js/riot-tags.min.js'], 'riot-js', { async: false })
+    loadjs('/js/hammer.min.js', 'hammer-js')
+    loadjs('/js/page.min.js', 'page-js')
 
-    loadjs.ready(['blaze-css', 'riot-js'], {
+    loadjs.ready(['blaze-css', 'riot-js', 'hammer-js', 'page-js'], {
       success: function () {
         console.log('[LoadJS] Dependencies loaded.')
         document.querySelector('.page-load-spinner').classList.add('zoomOut')
