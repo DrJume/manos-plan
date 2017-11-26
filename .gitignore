@@ -1,3 +1,9 @@
+### Own
+src/riot-tags/riot-tags.js
+public/index.html
+public/js/riot-tags.min.js
+
+
 # Created by https://www.gitignore.io/api/node,windows,firebase,visualstudiocode
 
 ### Firebase ###
