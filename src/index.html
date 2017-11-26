@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManosPlan</title>
+
+  <script src="/js/loadjs.min.js"></script>
+</head>
+
+<body>
+
+  <day-lessons></day-lessons>
+
+  <div class="page-load-spinner">
+    <style>
+      @@include('spinner.css')
+    </style>
+    @@include('spinner.html')
+  </div>
+
+  <script defer>
+    loadjs('/css/blaze.min.css', 'blaze-css')
+    loadjs(['/js/riot.min.js', '/js/riot-tags.min.js'], 'riot-js', { async: false })
+
+    loadjs.ready(['blaze-css', 'riot-js'], {
+      success: function () {
+        console.log('[LoadJS] Dependencies loaded.')
+        document.querySelector('.page-load-spinner').classList.add('zoomOut')
+        setTimeout(function () {
+          document.querySelector('.page-load-spinner').remove()
+          document.body.classList.add('c-text')
+          riot.mount('*')
+        }, 1000)
+      }
+    })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "manos-plan",
+  "scripts": {
+    "start": "gulp && firebase serve"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-file-include": "^1.2.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.6.3",
+    "gulp-uglify-es": "^0.1.6",
+    "postcss": "^6.0.14",
+    "run-sequence": "^2.2.0"
+  },
+  "private": true
+}

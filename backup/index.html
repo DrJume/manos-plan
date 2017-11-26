@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManosPlan</title>
+
+  <script src="/js/loadjs.min.js"></script>
+
+  <!-- update the version number as needed -->
+  <!-- <script defer src="/__/firebase/4.6.2/firebase-app.js"></script> -->
+  <!-- include only the Firebase features as you need -->
+  <!-- <script defer src="/__/firebase/4.6.2/firebase-auth.js"></script> -->
+  <!-- <script defer src="/__/firebase/4.6.2/firebase-database.js"></script> -->
+  <!-- <script defer src="/__/firebase/4.6.2/firebase-messaging.js"></script> -->
+  <!-- <script defer src="/__/firebase/4.6.2/firebase-storage.js"></script> -->
+  <!-- initialize the SDK after all desired features are loaded -->
+  <!-- <script defer src="/__/firebase/init.js"></script> -->
+
+</head>
+
+<body>
+
+  <script defer>
+    loadjs('/css/blaze.min.css', 'blaze-css')
+    //loadjs('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'fa-css')
+    loadjs(['/js/riot.min.js', '/js/riot-tags.js'], 'riot-js', { async: false });
+
+    loadjs.ready(['blaze-css', 'riot-js'], {
+      success: function () {
+        console.log("LOADED")
+        document.querySelector('.page-load-spinner').classList.add('zoomOut')
+        setTimeout(function () {
+          document.querySelector('.page-load-spinner').remove()
+          document.body.classList.add('c-text')
+          riot.mount('*')
+        }, 1100)
+      }
+    })
+  </script>
+
+
+  <day-lessons></day-lessons>
+
+
+  <div class="page-load-spinner">
+    <style>
+      body {
+        margin: 0;
+      }
+
+      @keyframes zoomOut {
+        from {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+          transform: scale3d(.3, .3, .3);
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      .zoomOut {
+        animation-name: zoomOut;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      .page-load-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .sk-cube-grid {
+        width: 10em;
+        height: 10em;
+      }
+
+      .sk-cube-grid .sk-cube {
+        width: 33%;
+        height: 33%;
+        background-color: #333;
+        float: left;
+        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+      }
+
+      .sk-cube-grid .sk-cube1 {
+        animation-delay: 0.2s;
+      }
+
+      .sk-cube-grid .sk-cube2 {
+        animation-delay: 0.3s;
+      }
+
+      .sk-cube-grid .sk-cube3 {
+        animation-delay: 0.4s;
+      }
+
+      .sk-cube-grid .sk-cube4 {
+        animation-delay: 0.1s;
+      }
+
+      .sk-cube-grid .sk-cube5 {
+        animation-delay: 0.2s;
+      }
+
+      .sk-cube-grid .sk-cube6 {
+        animation-delay: 0.3s;
+      }
+
+      .sk-cube-grid .sk-cube7 {
+        animation-delay: 0s;
+      }
+
+      .sk-cube-grid .sk-cube8 {
+        animation-delay: 0.1s;
+      }
+
+      .sk-cube-grid .sk-cube9 {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes sk-cubeGridScaleDelay {
+        0%,
+        70%,
+        100% {
+          transform: scale3D(1, 1, 1);
+        }
+        35% {
+          transform: scale3D(0, 0, 1);
+        }
+      }
+    </style>
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
