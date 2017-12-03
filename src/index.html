@@ -3,8 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ManosPlan</title>
+
+  @@include('apple-webapp-meta.html')
+
+  <style>
+    body,
+    html {
+      position: fixed;
+    }
+  </style>
 
   <script src="/js/loadjs.min.js"></script>
 </head>
@@ -14,10 +23,10 @@
   <day-lessons></day-lessons>
 
   <div class="page-load-spinner">
+    @@include('spinner.html')
     <style>
       @@include('spinner.min.css')
     </style>
-    @@include('spinner.html')
   </div>
 
   <script defer>

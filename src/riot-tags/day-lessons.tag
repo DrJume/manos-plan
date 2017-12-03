@@ -1,6 +1,7 @@
 <day-lessons>
 
-    <h1 class="c-heading u-super">Unterrichtsstunden</h1>
+    <h1 class="c-heading u-super">Platform: {{navigator.platform}}</h1>
+    <h1 class="c-heading u-super">Standalone: {{window.navigator.standalone}}</h1>
 
     <style>
         :scope {
@@ -15,7 +16,7 @@
     </style>
 
     <script>
-    
+        
     </script>
 
 </day-lessons>
